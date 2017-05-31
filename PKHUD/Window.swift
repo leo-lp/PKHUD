@@ -27,6 +27,7 @@ internal class ContainerView: UIView {
 
     fileprivate func commonInit() {
         backgroundColor = UIColor.clear
+        isHidden = true
 
         addSubview(backgroundView)
         addSubview(frameView)
@@ -67,7 +68,7 @@ internal class ContainerView: UIView {
             UIView.animate(withDuration: 0.8, animations: {
                 self.frameView.alpha = 0.0
                 self.hideBackground(animated: false)
-            }, completion: { bool in finalize(true) })
+            }, completion: { _ in finalize(true) })
         } else {
             self.frameView.alpha = 0.0
             finalize(true)
